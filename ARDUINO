@@ -1,0 +1,33 @@
+int pin1 = 4;
+int pin2 = 5;
+
+boolean val1 = HIGH;
+boolean val2 = HIGH;
+
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(4, OUTPUT);
+  pinMode(5, OUTPUT);
+  digitalWrite(pin1, val1);
+  digitalWrite(pin2, val2);
+}
+
+void loop()
+{
+  int data = Serial.read();
+
+  if(data == 76) {
+
+      val1 = !val1;
+    }
+
+  if(data == 70) {
+
+      val2 = !val2;
+    }
+
+ digitalWrite(pin1, val1);
+ digitalWrite(pin2, val2);
+  
+}
